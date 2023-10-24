@@ -1,6 +1,8 @@
 package com.example.springmodels.models;
 
 
+import com.example.springmodels.dublicateModel.OrderMemory;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
@@ -50,6 +52,12 @@ public class Order {
 
     public Order(LocalDate dateCreated, Status status, Address address) {
         this.dateCreated = dateCreated;
+        this.status = status;
+        this.address = address;
+    }
+
+    public Order(Status status, Address address) {
+        this.dateCreated = LocalDate.now();
         this.status = status;
         this.address = address;
     }

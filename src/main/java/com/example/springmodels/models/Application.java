@@ -1,6 +1,8 @@
 package com.example.springmodels.models;
 
 
+import com.example.springmodels.dublicateModel.ApplicationMemory;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -42,6 +44,13 @@ public class Application {
     public Application(String reason, String text) {
         this.reason = reason;
         this.text = text;
+    }
+
+    public Application(ApplicationMemory applicationMemory, ModelUser user) {
+        this.reason = applicationMemory.getReason();
+        this.text = applicationMemory.getText();
+        this.localDate = applicationMemory.getLocalDate();
+        this.person = user;
     }
 
     public int getId() {

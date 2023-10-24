@@ -1,7 +1,7 @@
 package com.example.springmodels.repos;
 
-import com.example.springmodels.models.*;
-import org.springframework.data.repository.CrudRepository;
+import com.example.springmodels.models.Address;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AddressRepository extends CrudRepository<Address, Integer> {
+public interface AddressRepository extends JpaRepository<Address, Integer> {
 }

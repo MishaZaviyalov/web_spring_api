@@ -2,8 +2,8 @@ package com.example.springmodels.repos;
 
 import com.example.springmodels.models.OrderList;
 import com.example.springmodels.models.OrderListKey;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface OrderListRepository extends CrudRepository<OrderList, OrderListKey> {
+public interface OrderListRepository extends JpaRepository<OrderList, OrderListKey> {
 
 }

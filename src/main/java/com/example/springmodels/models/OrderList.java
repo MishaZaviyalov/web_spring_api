@@ -33,6 +33,7 @@ public class OrderList {
     }
 
     public OrderList(Product product, Order order) {
+        this.id = new OrderListKey(product.getId(), order.getId());
         this.product = product;
         this.order = order;
     }

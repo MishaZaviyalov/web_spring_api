@@ -1,6 +1,8 @@
 package com.example.springmodels.models;
 
 
+import com.example.springmodels.dublicateModel.AddressMemory;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.List;
@@ -89,6 +91,15 @@ public class Address {
         this.house = house;
         this.entrance = entrance;
         this.apartment = apartment;
+    }
+
+    public Address(AddressMemory addressMemory, ModelUser user){
+        this.city = addressMemory.getCity();
+        this.street = addressMemory.getStreet();
+        this.house = addressMemory.getHouse();
+        this.entrance = addressMemory.getEntrance();
+        this.apartment = addressMemory.getApartment();
+        this.modelUser = user;
     }
 
     public int getId() {

@@ -64,6 +64,13 @@ public class Product {
         this.orders = orders;
     }
 
+    public Product(com.example.springmodels.dublicateModel.ProductMemory productMemory, Category category) {
+        this.name = productMemory.getName();
+        this.price = productMemory.getPrice();
+        this.description = productMemory.getDescription();
+        this.category = category;
+    }
+
     public int getId() {
         return id;
     }

@@ -3,6 +3,7 @@ package com.example.springmodels.controllers;
 import ch.qos.logback.core.status.StatusUtil;
 import com.example.springmodels.models.Status;
 import com.example.springmodels.repos.StatusRepository;
+import org.apache.coyote.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -44,6 +45,12 @@ public class StatusController {
         Status statusToUpdate = statusRepository.findById(id).orElseThrow();
         statusToUpdate.setName(status.getName());
         return statusRepository.save(statusToUpdate);
+    }
+
+    @DeleteMapping("/statuses/{id}")
+    Status delete(@RequestBody Status status){
+        statusRepository.deleteById(status.getId());
+        return status;
     }
 
 }
